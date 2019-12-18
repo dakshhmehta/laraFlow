@@ -1,0 +1,50 @@
+title: Invoice
+description: An invoice is sent to clients to request for a payment.
+type: workflow
+
+data:
+  client:
+    type: contact
+    options:
+      type: client
+  due_date:
+    type: datetime
+  amount:
+    type: decimal
+    validations:
+      - min: 0
+
+lifecycle:
+  - _CREATED:
+      notify:
+        - admin
+        - followers:
+            message: "A new invoice for ##contact.name## has been created."
+      actions:
+        - send:
+            notify:
+              - client:
+                  via:
+                    - sms:
+                        template: "New invoice ##title## has been created for you at Romin Interactive. Dues for ##amount##"
+                    - email
+            move_to: SENT
+
+      to:
+        - SENT
+  - SENT:
+      notify:
+        - admin
+        - followers
+      to:
+        - PAID
+        - VOID
+  - PAID:
+      notify:
+        - admin
+        - followers
+        - client
+  - VOID:
+      notify:
+        - admin
+        - followers
