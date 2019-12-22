@@ -53,7 +53,9 @@ class TasksController extends Controller
      */
     public function show(Task $task)
     {
-        //
+        $tasks = Task::all();
+
+        return Inertia::render('Tasks/Index', compact('tasks', 'task'));
     }
 
     /**
