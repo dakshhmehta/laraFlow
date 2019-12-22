@@ -2,14 +2,21 @@
 <div>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="url('/')">
+            <inertia-link class="navbar-brand" href="/home">
                 {{ $page.app.name }}
-            </a>
+            </inertia-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <inertia-link href="/tasks" class="nav-link">Tasks</inertia-link>
+                    </li>
+                </ul>
+
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
@@ -28,7 +35,9 @@
     </nav>
 
     <main class="py-4">
-        <slot></slot>
+        <div class="pl-5 pr-5">
+            <slot></slot>
+        </div>
     </main>
 </div>
 </template>

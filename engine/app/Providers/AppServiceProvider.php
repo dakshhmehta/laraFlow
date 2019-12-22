@@ -25,5 +25,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Inertia::version(env('ASSETS_VERSION'));
+
+        Inertia::share('errors', function () {
+            return session()->get('errors')
+                ? session()->get('errors')->getBag('default')->getMessages()
+                : (object) [];
+        });
     }
 }
