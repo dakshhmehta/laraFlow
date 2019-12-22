@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         All Tasks
-                        <inertia-link href="/tasks" class="btn btn-small btn-success">+</inertia-link>
+                        <inertia-link href="/tasks" class="btn btn-sm btn-success">+</inertia-link>
                     </div>
 
                     <div class="card-body">
@@ -20,11 +20,16 @@
                                 <div class="row">
                                     <div class="col-md-9 text-truncate">
                                         {{ i + 1 }}.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <inertia-link :href="'/tasks/'+task.id">{{ task.name }}</inertia-link>
+                                        <inertia-link :href="'/tasks/'+task.id">{{ task.name }}</inertia-link><br/><br/>
+
+                                        <span class="badge badge-pill p-2 badge-dark">development</span>
+                                        <span class="badge badge-pill p-2 badge-primary">review</span>
+                                        <span class="badge badge-pill p-2 badge-success">approved</span>
                                     </div>
 
-                                    <div class="col-md-2 text-muted">
-                                        No Due date
+                                    <div class="col-md-2 text-right">
+                                        Daksh M.<br/>
+                                        <span class="text-muted">No Due date</span>
                                     </div>
 
                                     <div class="col-md-1">

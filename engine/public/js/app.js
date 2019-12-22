@@ -2160,6 +2160,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -3670,7 +3675,7 @@ var render = function() {
               _c(
                 "inertia-link",
                 {
-                  staticClass: "btn btn-small btn-success",
+                  staticClass: "btn btn-sm btn-success",
                   attrs: { href: "/tasks" }
                 },
                 [_vm._v("+")]
@@ -3707,15 +3712,48 @@ var render = function() {
                               "inertia-link",
                               { attrs: { href: "/tasks/" + task.id } },
                               [_vm._v(_vm._s(task.name))]
+                            ),
+                            _c("br"),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "badge badge-pill p-2 badge-dark"
+                              },
+                              [_vm._v("development")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "badge badge-pill p-2 badge-primary"
+                              },
+                              [_vm._v("review")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "badge badge-pill p-2 badge-success"
+                              },
+                              [_vm._v("approved")]
                             )
                           ],
                           1
                         ),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-2 text-muted" }, [
+                        _c("div", { staticClass: "col-md-2 text-right" }, [
                           _vm._v(
-                            "\n                                    No Due date\n                                "
-                          )
+                            "\n                                    Daksh M."
+                          ),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v("No Due date")
+                          ])
                         ]),
                         _vm._v(" "),
                         _c(
